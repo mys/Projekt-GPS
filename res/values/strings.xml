@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Projekt GPS</string>
+    
+    <string name="menu_delete">Usuń lokalizacje</string>
+    <string name="menu_send">Wyślij lokalizację</string>
+    <string name="menu_about">O aplikacji</string>
+    
+    <string name="dialog_gps_title">Usługi lokalizacyjne</string>
+    <string name="dialog_gps_message">Włącz usługę lokalizacyjną, żeby ustalić swoje położenie</string>
+    
+    <string name="ok">OK</string>
+    <string name="cancel">Anuluj</string>
+
+</resources>

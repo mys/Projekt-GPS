@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc" >
+
+    <target name="javadoc" >
+
+        <javadoc
+            access="public"
+            author="true"
+            classpath="libs/android-support-v4.jar;D:\Android\android-sdk-windows\tools\support\annotations.jar;D:\Android\android-sdk-windows\platforms\android-15\android.jar;D:\Android\android-sdk-windows\add-ons\addon-google_apis-google_inc_-15\libs\maps.jar"
+            destdir="doc"
+            nodeprecated="false"
+            nodeprecatedlist="false"
+            noindex="false"
+            nonavbar="false"
+            notree="false"
+            packagenames="com.miccelinski.gps"
+            source="1.6"
+            sourcepath="gen;src"
+            splitindex="true"
+            use="true"
+            version="true" >
+            
+            <link href="file:/D:/Android/android-sdk-windows/docs/reference/" />
+
+            <!-- <link href="file:/D:/Android/android-sdk-windows/add-ons/addon-google_apis-google_inc_-15/docs/reference" /> -->
+
+            <link href="file:/C:/Users/Michał/workspace/Projekt%20GPS/doc/" />
+
+            
+        </javadoc>
+    </target>
+
+</project>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/padding_medium"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textViewNazwa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nazwa (opcjonalne):" />
+
+    <EditText
+        android:id="@+id/EditTextNazwa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/TextViewMiasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Miasto:" />
+
+    <EditText
+        android:id="@+id/editTextMiasto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewUlica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ulica:" />
+
+    <EditText
+        android:id="@+id/editTextUlica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewNumer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numer domu:" />
+
+    <EditText
+        android:id="@+id/editTextNumer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+    	android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Prowadź" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Zapisz" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:keepScreenOn="true"
+    android:padding="@dimen/padding_medium" >
+
+    <Button
+        android:id="@+id/buttonToggleSatellite"
+        style="?android:attr/buttonStyleToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/buttonToggleMap"
+        android:background="@android:drawable/btn_default_small"
+        android:drawableTop="@android:drawable/ic_menu_gallery"
+        android:minWidth="48dip"
+        android:onClick="toggleSatellite"
+        android:text="Wył." />
+
+    <Button
+        android:id="@+id/buttonToggleCompass"
+        style="?android:attr/buttonStyleToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:drawable/btn_default_small"
+        android:drawableTop="@android:drawable/ic_menu_compass"
+        android:minWidth="48dip"
+        android:onClick="toggleCompass"
+        android:text="Wył." />
+
+    <Button
+        android:id="@+id/buttonToggleMap"
+        style="?android:attr/buttonStyleToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/buttonToggleCompass"
+        android:background="@android:drawable/btn_default_small"
+        android:drawableTop="@android:drawable/ic_menu_mapmode"
+        android:minWidth="48dip"
+        android:onClick="toggleMap"
+        android:text="Wył." />
+
+    <TextView
+        android:id="@+id/textViewLokalizacja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Lokalizacja ustalona:" />
+
+    <TextView
+        android:id="@+id/textViewProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewLokalizacja"
+        android:layout_below="@+id/textViewLokalizacja"
+        android:layout_marginLeft="8dp"
+        android:text="Naziemnie/Satelitarnie"
+        tools:context=".MainActivity" />
+
+    <TextView
+        android:id="@+id/textViewWsp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textViewProvider"
+        android:text="Współrzędne:" />
+
+    <TextView
+        android:id="@+id/textViewWspolrzedne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewWsp"
+        android:layout_below="@+id/textViewWsp"
+        android:layout_marginLeft="8dp"
+        android:text="0.0000, 0.0000" />
+
+    <LinearLayout
+        android:id="@+id/llayout"
+        android:layout_width="fill_parent"
+        android:layout_height="320dp"
+        android:layout_below="@+id/textViewCel"
+        android:orientation="vertical" >
+
+        <com.google.android.maps.MapView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mapView"
+            style="@style/mapViewStyle"
+            android:layout_width="600dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:apiKey="0QWIUioVWPDbAIIqba9L5YU-nt30AmeW9grnoLA"
+            android:clickable="false" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewCel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonToggleCompass"
+        android:gravity="right"
+        android:maxLines="2"
+        android:maxWidth="200dp"
+        android:text="TextViewCel" />
+
+    <ImageView
+        android:id="@+id/imageViewCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:scaleType="matrix"
+        android:src="@drawable/compass" />
+
+    <ImageView
+        android:id="@+id/imageViewArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:scaleType="matrix"
+        android:src="@drawable/green_arrow60p"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewDystans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:paddingTop="36dp"
+        android:text="Dystans:" />
+
+    <TextView
+        android:id="@+id/textViewFirstFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Nie złapano fixa" />
+
+    <TextView
+        android:id="@+id/textViewSatelity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewFirstFix"
+        android:layout_alignParentLeft="true"
+        android:text="Znalezione satelity: 0" />
+
+    <TextView
+        android:id="@+id/textViewMoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewSatelity"
+        android:layout_alignParentLeft="true"
+        android:maxLines="2"
+        android:maxWidth="200dp"
+        android:text="Moc satelit: -" />
+
+    <Button
+        android:id="@+id/buttonPlus"
+        style="?android:attr/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/llayout"
+        android:layout_alignLeft="@+id/textViewDystans"
+        android:layout_marginLeft="40dp"
+        android:background="@android:drawable/btn_plus" />
+
+    <Button
+        android:id="@+id/buttonMinus"
+        style="?android:attr/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonPlus"
+        android:layout_alignBottom="@+id/buttonPlus"
+        android:layout_alignRight="@+id/textViewDystans"
+        android:layout_marginRight="40dp"
+        android:background="@android:drawable/btn_minus" />
+
+    <Button
+        android:id="@+id/buttonZmienCel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:drawable/btn_default_small"
+        android:onClick="changeDestination"
+        android:text="Wybierz cel" />
+
+</RelativeLayout>
